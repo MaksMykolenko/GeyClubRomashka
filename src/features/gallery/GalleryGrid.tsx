@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { GalleryItem, GalleryCategory } from '@/types';
 import { useI18n } from '@/i18n/i18n-context';
 import { LightboxModal } from './LightboxModal';
+import { getAssetPath } from '@/lib/utils';
 import { Maximize2 } from 'lucide-react';
 
 interface GalleryGridProps {
@@ -62,7 +63,7 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ items }) => {
               } rounded-3xl overflow-hidden bg-dark-surface border border-neon-pink/20 cursor-pointer hover:border-neon-pink/70 hover:shadow-neon transition-all duration-300`}
             >
               <Image
-                src={item.imageUrl}
+                src={getAssetPath(item.imageUrl)}
                 alt={item.alt}
                 fill
                 loading="lazy"

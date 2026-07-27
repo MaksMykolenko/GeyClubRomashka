@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { campaignPhotos, CampaignPhoto } from '@/content/campaign.data';
 import { LightboxModal } from '@/features/gallery/LightboxModal';
+import { getAssetPath } from '@/lib/utils';
 import { Sparkles, ArrowRight, Maximize2, Sun } from 'lucide-react';
 import { GalleryItem } from '@/types';
 
@@ -59,7 +60,7 @@ export const AfterDawnSection: React.FC = () => {
           className="lg:col-span-7 group relative min-h-[480px] sm:min-h-[620px] rounded-3xl overflow-hidden border border-neon-pink/30 shadow-neon bg-dark-surface cursor-pointer hover:border-neon-pink/80 transition-all duration-500"
         >
           <Image
-            src={campaignPhotos[0].src}
+            src={getAssetPath(campaignPhotos[0].src)}
             alt={campaignPhotos[0].alt}
             fill
             loading="lazy"
@@ -97,7 +98,7 @@ export const AfterDawnSection: React.FC = () => {
             className="flex-1 group relative min-h-[290px] rounded-3xl overflow-hidden border border-neon-purple/30 shadow-neon-purple bg-dark-surface cursor-pointer hover:border-neon-purple/80 transition-all duration-500"
           >
             <Image
-              src={campaignPhotos[1].src}
+              src={getAssetPath(campaignPhotos[1].src)}
               alt={campaignPhotos[1].alt}
               fill
               loading="lazy"
@@ -124,7 +125,7 @@ export const AfterDawnSection: React.FC = () => {
             className="flex-1 group relative min-h-[290px] rounded-3xl overflow-hidden border border-neon-blue/30 shadow-neon-blue bg-dark-surface cursor-pointer hover:border-neon-blue/80 transition-all duration-500"
           >
             <Image
-              src={campaignPhotos[2].src}
+              src={getAssetPath(campaignPhotos[2].src)}
               alt={campaignPhotos[2].alt}
               fill
               loading="lazy"
@@ -152,7 +153,7 @@ export const AfterDawnSection: React.FC = () => {
         <div className="flex items-center gap-4">
           <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-neon-pink/50 shrink-0">
             <Image
-              src={campaignPhotos[0].thumbnail}
+              src={getAssetPath(campaignPhotos[0].thumbnail)}
               alt="Ромашковий ранок"
               fill
               className="object-cover object-[center_65%]"

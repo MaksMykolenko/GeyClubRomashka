@@ -14,6 +14,7 @@ import { EventFilters } from '@/features/events/EventFilters';
 import { EventGrid } from '@/features/events/EventGrid';
 import { AfterDawnSection } from '@/features/campaign/AfterDawnSection';
 import { BookingForm } from '@/features/booking/BookingForm';
+import { getAssetPath } from '@/lib/utils';
 import {
   Sparkles,
   ShieldCheck,
@@ -43,7 +44,7 @@ export default function HomePage() {
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-8 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-poster.png"
+            src={getAssetPath('/images/hero-poster.png')}
             alt="Афіша гей-клубу Ромашка"
             fill
             priority

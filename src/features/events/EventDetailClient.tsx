@@ -6,10 +6,10 @@ import Link from 'next/link';
 import { useI18n } from '@/i18n/i18n-context';
 import { useModals } from '@/components/common/ModalContext';
 import { sampleEvents } from '@/content/events.data';
-import { EventItem } from '@/types';
 import { TicketButton } from '@/components/ui/TicketButton';
 import { NeonBadge } from '@/components/ui/NeonBadge';
 import { EventCard } from '@/features/events/EventCard';
+import { getAssetPath } from '@/lib/utils';
 import {
   Calendar,
   Clock,
@@ -59,7 +59,7 @@ export const EventDetailClient: React.FC<EventDetailClientProps> = ({ eventId })
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-5 relative aspect-[4/5] rounded-3xl overflow-hidden border border-neon-pink/30 shadow-neon bg-dark-surface">
           <Image
-            src={event.posterUrl}
+            src={getAssetPath(event.posterUrl)}
             alt={event.title}
             fill
             priority

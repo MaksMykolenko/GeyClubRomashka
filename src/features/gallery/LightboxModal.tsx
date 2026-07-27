@@ -3,6 +3,7 @@
 import React, { useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { GalleryItem } from '@/types';
+import { getAssetPath } from '@/lib/utils';
 import { X, ChevronLeft, ChevronRight, Calendar, Tag } from 'lucide-react';
 
 interface LightboxModalProps {
@@ -86,7 +87,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({
 
         <div className="relative w-full h-full max-w-5xl max-h-[80vh] rounded-2xl overflow-hidden shadow-2xl">
           <Image
-            src={currentItem.imageUrl}
+            src={getAssetPath(currentItem.imageUrl)}
             alt={currentItem.alt}
             fill
             className="object-contain"
