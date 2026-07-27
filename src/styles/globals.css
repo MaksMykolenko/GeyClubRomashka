@@ -1,12 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Unbounded:wght@400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-unbounded: 'Unbounded', sans-serif;
-  --font-manrope: 'Manrope', sans-serif;
+  --background: #090A0A;
+  --background-deep: #050606;
+  --surface: #0D0F0F;
+  --surface-raised: #121414;
+  --surface-hover: #171919;
+
+  --border: #282B2B;
+  --border-strong: #414545;
+
+  --text-primary: #F5F5F2;
+  --text-secondary: #AAAFAA;
+  --text-muted: #727772;
+
+  --accent: #D90072;
+  --accent-hover: #F01888;
+  --accent-muted: rgba(217, 0, 114, 0.14);
+
+  --success: #67C58A;
+  --warning: #D9AD5B;
+  --danger: #E56B76;
+  --focus: #9CC8FF;
+
+  --font-manrope: 'Manrope', 'Inter', sans-serif;
 }
 
 * {
@@ -15,73 +36,40 @@
 }
 
 body {
-  background-color: #07050D;
-  color: #FFF8FC;
-  font-family: var(--font-manrope), sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-manrope);
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #07050D;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1F152E;
-  border-radius: 4px;
+  background: var(--border-strong);
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF2AA6;
-}
-
-/* Text glow utilities */
-.text-glow-pink {
-  text-shadow: 0 0 12px rgba(255, 42, 166, 0.75), 0 0 24px rgba(255, 42, 166, 0.4);
-}
-
-.text-glow-blue {
-  text-shadow: 0 0 12px rgba(52, 133, 255, 0.75), 0 0 24px rgba(52, 133, 255, 0.4);
-}
-
-.text-glow-purple {
-  text-shadow: 0 0 12px rgba(138, 61, 255, 0.75);
-}
-
-/* Custom neon card border */
-.neon-border-pink {
-  border: 1px solid rgba(255, 42, 166, 0.3);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.neon-border-pink:hover {
-  border-color: rgba(255, 42, 166, 0.8);
-  box-shadow: 0 0 20px rgba(255, 42, 166, 0.3);
-}
-
-.neon-border-purple {
-  border: 1px solid rgba(138, 61, 255, 0.3);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.neon-border-purple:hover {
-  border-color: rgba(138, 61, 255, 0.8);
-  box-shadow: 0 0 20px rgba(138, 61, 255, 0.3);
+  background: var(--accent);
 }
 
 /* Accessibility Focus States */
 :focus-visible {
-  outline: 2px solid #FF2AA6;
-  outline-offset: 4px;
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
 }
 
-/* Prefers reduced motion */
+/* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

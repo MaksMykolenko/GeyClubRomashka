@@ -10,58 +10,63 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Refined Minimalist Editorial Palette (Section 4)
+        background: {
+          DEFAULT: '#090A0A',
+          deep: '#050606',
+        },
+        surface: {
+          DEFAULT: '#0D0F0F',
+          raised: '#121414',
+          hover: '#171919',
+        },
+        border: {
+          DEFAULT: '#282B2B',
+          strong: '#414545',
+        },
+        text: {
+          primary: '#F5F5F2',
+          secondary: '#AAAFAA',
+          muted: '#727772',
+        },
+        accent: {
+          DEFAULT: '#D90072',
+          hover: '#F01888',
+          muted: 'rgba(217, 0, 114, 0.14)',
+        },
+        success: '#67C58A',
+        warning: '#D9AD5B',
+        danger: '#E56B76',
+        focus: '#9CC8FF',
+
+        // Legacy utility aliases
         dark: {
-          DEFAULT: '#07050D',
-          surface: '#100A18',
-          card: '#150E22',
-          border: 'rgba(255, 42, 166, 0.15)',
+          DEFAULT: '#090A0A',
+          surface: '#0D0F0F',
+          card: '#121414',
+          border: '#282B2B',
         },
         neon: {
-          pink: '#FF2AA6',
-          purple: '#8A3DFF',
-          blue: '#3485FF',
-          yellow: '#FFC84A',
-          red: '#FF5C68',
+          pink: '#D90072',
+          purple: '#A855F7',
+          blue: '#3B82F6',
+          yellow: '#D9AD5B',
+          red: '#E56B76',
         },
         club: {
-          text: '#FFF8FC',
-          subtext: '#BEB3C9',
-          muted: '#8A7B9B',
+          text: '#F5F5F2',
+          subtext: '#AAAFAA',
+          muted: '#727772',
         },
       },
       fontFamily: {
-        display: ['var(--font-unbounded)', 'sans-serif'],
-        sans: ['var(--font-manrope)', 'sans-serif'],
+        display: ['var(--font-manrope)', 'Inter', 'sans-serif'],
+        sans: ['var(--font-manrope)', 'Inter', 'sans-serif'],
       },
       boxShadow: {
-        neon: '0 0 20px rgba(255, 42, 166, 0.4)',
-        'neon-blue': '0 0 20px rgba(52, 133, 255, 0.4)',
-        'neon-purple': '0 0 25px rgba(138, 61, 255, 0.4)',
-        'neon-yellow': '0 0 15px rgba(255, 200, 74, 0.3)',
-      },
-      backgroundImage: {
-        'hero-gradient': 'linear-gradient(180deg, rgba(7, 5, 13, 0.3) 0%, rgba(7, 5, 13, 0.85) 75%, #07050D 100%)',
-        'pink-purple-glow': 'radial-gradient(circle, rgba(255,42,166,0.2) 0%, rgba(138,61,255,0.1) 50%, transparent 80%)',
-        'blue-purple-glow': 'radial-gradient(circle, rgba(52,133,255,0.2) 0%, rgba(138,61,255,0.1) 50%, transparent 80%)',
-      },
-      keyframes: {
-        pulseGlow: {
-          '0%, 100%': { opacity: '0.6', transform: 'scale(1)' },
-          '50%': { opacity: '0.9', transform: 'scale(1.05)' },
-        },
-        floatSlow: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        daisyRotate: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
-        },
-      },
-      animation: {
-        'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
-        'float-slow': 'floatSlow 6s ease-in-out infinite',
-        'daisy-spin': 'daisyRotate 20s linear infinite',
+        subtle: '0 2px 10px rgba(0, 0, 0, 0.5)',
+        accent: '0 0 15px rgba(217, 0, 114, 0.25)',
+        neon: '0 0 15px rgba(217, 0, 114, 0.25)',
       },
     },
   },
