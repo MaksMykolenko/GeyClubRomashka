@@ -1,0 +1,86 @@
+import { GalleryItem } from '@/types';
+import { campaignPhotos } from './campaign.data';
+
+const campaignGalleryItems: GalleryItem[] = campaignPhotos.map((photo) => ({
+  id: photo.id,
+  title: photo.title,
+  category: 'campaign' as any,
+  imageUrl: photo.src,
+  date: 'Липень 2026',
+  alt: photo.alt,
+  eventName: 'Промокампанія «Ромашки»',
+}));
+
+export const galleryItems: GalleryItem[] = [
+  ...campaignGalleryItems,
+  {
+    id: 'gal-1',
+    title: 'Головна сцена під час Ніч Ромашки',
+    category: 'parties',
+    imageUrl: '/images/hero-poster.png',
+    date: 'Липень 2026',
+    alt: 'Афіша та сяюча сцена клубу Ромашка з неоновим світлом та диско-кулею',
+    eventName: 'Ніч Ромашки',
+  },
+  {
+    id: 'gal-2',
+    title: 'Дзеркальна куля та неонове проміння',
+    category: 'atmosphere',
+    imageUrl: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1200&q=80',
+    date: 'Червень 2026',
+    alt: 'Дзеркальна куля нічного клубу у фіолетовому та рожевому світлі',
+    eventName: 'Disco Bloom',
+  },
+  {
+    id: 'gal-3',
+    title: 'Виступ Drag Queens на сцені',
+    category: 'shows',
+    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=80',
+    date: 'Липень 2026',
+    alt: 'Яскраве Drag шоу з неоновими декораціями та сценічним світлом',
+    eventName: 'Drag Garden',
+  },
+  {
+    id: 'gal-4',
+    title: 'Танцпол у ритмі Peak Time Techno',
+    category: 'parties',
+    imageUrl: 'https://images.unsplash.com/photo-1574391884720-bbc3740c59d1?auto=format&fit=crop&w=1200&q=80',
+    date: 'Липень 2026',
+    alt: 'Енергійний танцпол з рожево-синім прожекторним світлом',
+    eventName: 'Queer Friday',
+  },
+  {
+    id: 'gal-5',
+    title: 'DJ пульт та лазерна світлова анімація',
+    category: 'interior',
+    imageUrl: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1200&q=80',
+    date: 'Травень 2026',
+    alt: 'Професійне звукове обладнання та DJ пульт клубу Ромашка',
+    eventName: 'After Dark',
+  },
+  {
+    id: 'gal-6',
+    title: 'Коктейльний лаунж бар',
+    category: 'interior',
+    imageUrl: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1200&q=80',
+    date: 'Червень 2026',
+    alt: 'Затишна барна зона з м’яким неоновим підсвічуванням',
+    eventName: 'Sunday Recovery',
+  },
+  {
+    id: 'gal-7',
+    title: 'Неонова ромашка — символ свободи',
+    category: 'atmosphere',
+    imageUrl: 'https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1200&q=80',
+    date: 'Липень 2026',
+    alt: 'Світлова арт-інсталяція ромашки на стіні клубу',
+  },
+  {
+    id: 'gal-8',
+    title: 'Live Vocal Performance',
+    category: 'shows',
+    imageUrl: 'https://images.unsplash.com/photo-1429962714451-bb934ecdc436?auto=format&fit=crop&w=1200&q=80',
+    date: 'Червень 2026',
+    alt: 'Живий сольний виступ артиста під синім світлом прожекторів',
+  },
+];
