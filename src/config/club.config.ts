@@ -7,7 +7,7 @@ export const clubConfig: ClubConfig = {
   slogan: 'Музика. Свобода. Любов.',
   ageLimit: '18+',
   addressPlaceholder: 'м. Березань, Київська обл.',
-  addressMapsUrl: 'https://maps.app.goo.gl/iBUJhXfVczDUkgKk6',
+  addressMapsUrl: 'https://maps.app.goo.gl/Z8py9nETgMExszH27',
   metroStation: 'Березань',
   workingHours: 'П’ятниця — Субота: 22:00 – 06:00',
   phone: '+380 (00) 000-00-00',
