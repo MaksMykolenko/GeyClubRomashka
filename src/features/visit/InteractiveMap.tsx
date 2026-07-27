@@ -1,65 +1,61 @@
 'use client';
 
 import React from 'react';
-import { MapPin, Navigation, TrainFront, ExternalLink } from 'lucide-react';
+import { MapPin, Navigation, ExternalLink } from 'lucide-react';
 import { clubConfig } from '@/config/club.config';
 
 export const InteractiveMap: React.FC = () => {
-  return (
-    <div className="relative w-full h-80 sm:h-96 rounded-3xl overflow-hidden border border-neon-pink/30 shadow-neon bg-dark-surface flex flex-col justify-between p-6">
-      {/* Decorative dark grid map graphic background */}
-      <div className="absolute inset-0 bg-[radial-gradient(#1f152e_1px,transparent_1px)] [background-size:16px_16px] opacity-60" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-neon-pink/10 rounded-full blur-3xl" />
+  const mapEmbedUrl = `https://maps.google.com/maps?q=50.3249304,31.4725508&hl=uk&z=16&output=embed`;
 
-      {/* Top Address Card */}
-      <div className="relative z-10 bg-dark/90 backdrop-blur-md border border-neon-pink/30 p-4 rounded-2xl max-w-sm flex items-start gap-3">
-        <MapPin className="w-6 h-6 text-neon-pink shrink-0 mt-0.5 animate-bounce" />
-        <div>
-          <h4 className="font-display text-sm font-bold text-white">
-            Клуб «{clubConfig.name}»
-          </h4>
-          <p className="text-xs text-neon-pink font-semibold mt-0.5">
-            {clubConfig.addressPlaceholder}
-          </p>
-          <a
-            href={clubConfig.addressMapsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[11px] text-neon-blue hover:underline mt-1"
-          >
-            <span>Відкрити в Google Maps</span>
-            <ExternalLink className="w-3 h-3" />
-          </a>
+  return (
+    <div className="relative w-full h-[420px] sm:h-[480px] rounded-3xl overflow-hidden border border-neon-pink/40 shadow-neon bg-dark-surface">
+      {/* Real Interactive Google Maps iframe with dark club filter */}
+      <iframe
+        title="Карта гей-клубу Ромашка"
+        src={mapEmbedUrl}
+        width="100%"
+        height="100%"
+        style={{ border: 0, filter: 'invert(90%) hue-rotate(180%) contrast(1.15) brightness(0.95)' }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+        className="w-full h-full"
+      />
+
+      {/* Floating Card Overlay - Top Left */}
+      <div className="absolute top-4 left-4 z-10 bg-dark/95 backdrop-blur-md border border-neon-pink/40 p-4 rounded-2xl max-w-xs shadow-neon">
+        <div className="flex items-start gap-3">
+          <MapPin className="w-5 h-5 text-neon-pink shrink-0 mt-0.5" />
+          <div>
+            <h4 className="font-display text-sm font-bold text-white">
+              Гей-клуб «{clubConfig.name}»
+            </h4>
+            <p className="text-xs text-neon-pink font-semibold mt-0.5">
+              {clubConfig.addressPlaceholder}
+            </p>
+            <a
+              href={clubConfig.addressMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-[11px] text-neon-blue hover:underline mt-1.5 font-medium"
+            >
+              <span>Відкрити в Google Maps</span>
+              <ExternalLink className="w-3 h-3" />
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Map Interactive Marker Icon Center */}
-      <div className="relative z-10 self-center flex flex-col items-center gap-2">
+      {/* Floating Action Button - Bottom Right */}
+      <div className="absolute bottom-4 right-4 z-10">
         <a
           href={clubConfig.addressMapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex flex-col items-center gap-2 cursor-pointer"
-        >
-          <div className="w-14 h-14 rounded-full bg-neon-pink/20 border-2 border-neon-pink flex items-center justify-center text-white shadow-neon group-hover:scale-110 transition-transform">
-            <Navigation className="w-7 h-7 text-neon-pink" />
-          </div>
-          <span className="text-[10px] font-display uppercase tracking-widest text-white bg-dark/90 px-3 py-1 rounded-full border border-dark-border group-hover:border-neon-pink transition-colors">
-            {clubConfig.addressPlaceholder}
-          </span>
-        </a>
-      </div>
-
-      {/* External Map Directions Link */}
-      <div className="relative z-10 self-end">
-        <a
-          href={clubConfig.addressMapsUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-neon-pink to-neon-purple hover:scale-105 text-white font-display text-xs font-semibold rounded-xl transition-all shadow-neon cursor-pointer"
+          className="inline-flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-neon-pink to-neon-purple hover:scale-105 text-white font-display text-xs font-semibold rounded-2xl transition-all shadow-neon cursor-pointer"
         >
           <Navigation className="w-4 h-4" />
-          <span>Прокласти маршрут в Google Maps</span>
+          <span>Прокласти маршрут</span>
         </a>
       </div>
     </div>
