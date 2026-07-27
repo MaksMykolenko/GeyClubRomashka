@@ -7,6 +7,7 @@ export interface ClubConfig {
   slogan: string;
   ageLimit: string;
   addressPlaceholder: string;
+  addressMapsUrl: string;
   metroStation: string;
   workingHours: string;
   phone: string;
